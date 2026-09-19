@@ -1,0 +1,12 @@
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsConsoleApp_PresentationLayer.exe.config
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsConsoleApp_PresentationLayer.exe
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsConsoleApp_PresentationLayer.pdb
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsDateAccessLayer.dll
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\bin\Debug\ContactsDateAccessLayer.pdb
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\obj\Debug\ContactsConsoleApp_PresentationLayer.csproj.AssemblyReference.cache
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\obj\Debug\ContactsConsoleApp_PresentationLayer.csproj.CoreCompileInputs.cache
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\obj\Debug\Contacts.7DC5DADD.Up2Date
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\obj\Debug\ContactsConsoleApp_PresentationLayer.exe
+C:\Users\Aio\source\repos\ContactsConsoleApp_PresentationLayer\obj\Debug\ContactsConsoleApp_PresentationLayer.pdb
