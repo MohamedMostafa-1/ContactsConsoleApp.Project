@@ -1,13 +1,38 @@
-﻿using System;
+﻿using ContactsBusinessLayer;
+using System;
 using System.Data;
-using ContactsBusinessLayer;
+using System.Diagnostics.Contracts;
 
 
 namespace ContactsConsoleApp_PresentationLayer
 {
     internal class Program
     {
+        private static void _ReadNewContact( ref clsContact Contact1)
+        {
+            Console.Write("Enter FirstName: ");
+            Contact1.FirstName = Console.ReadLine();
 
+            Console.Write("Enter LastName: ");
+            Contact1.LastName = Console.ReadLine();
+
+            Console.Write("Enter Email: ");
+            Contact1.Email = Console.ReadLine();
+
+            Console.Write("Enter Phone: ");
+            Contact1.Phone = Console.ReadLine();
+
+            Console.Write("Enter Address: ");
+            Contact1.Address = Console.ReadLine();
+
+            Console.Write("Enter ImagePath: ");
+            Contact1.ImagePath = Console.ReadLine();
+
+            Console.Write("Enter Country: ");
+            Contact1.CountryID = int.Parse(Console.ReadLine());
+
+            Contact1.DateOfBirth = DateTime.Now;
+        }
         static void testFindContact(int ID)
         {
             clsContact contact = clsContact.Find(ID);
@@ -29,10 +54,29 @@ namespace ContactsConsoleApp_PresentationLayer
                 Console.WriteLine("Contact [" + ID + "] Not Found");   
             }
         }
+        static void testAddNewContact()
+        {
+            Console.WriteLine("Add New Contact:- \n");
+            clsContact Contact1 = new clsContact();
+            _ReadNewContact(ref Contact1);
+
+            if (Contact1.Save())
+            {
+                Console.WriteLine("Contact Added Successfully with id=" + Contact1.ID);
+            }
+            else
+            {
+                Console.WriteLine("Contact Added Failed with id=" + Contact1.ID);
+
+            }
+
+
+        }
         static void Main(string[] args)
         {
-            testFindContact(1);
+            //testFindContact(2);
 
+            testAddNewContact();
             Console.ReadKey();
         }
     }
