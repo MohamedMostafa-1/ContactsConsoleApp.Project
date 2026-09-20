@@ -1,5 +1,6 @@
 ﻿using ContactsBusinessLayer;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics.Contracts;
 using System.Threading;
@@ -67,12 +68,11 @@ namespace ContactsConsoleApp_PresentationLayer
 
             if (Contact1.Save())
             {
-                Console.WriteLine("Contact Added Successfully with id=" + Contact1.ID);
+                Console.WriteLine("Contact Added Successfully with id = " + Contact1.ID);
             }
             else
             {
-                Console.WriteLine("Contact Added Failed with id=" + Contact1.ID);
-
+                Console.WriteLine("Contact Added Failed with id = " + Contact1.ID);
             }
 
 
@@ -121,12 +121,21 @@ namespace ContactsConsoleApp_PresentationLayer
             }
 
         }
+        static void testDeleteContact(int ID)
+        {
+            if (clsContact.DelectContact(ID))
+                Console.WriteLine("Contact Delete Successfully ^_^");
+            else
+                Console.WriteLine("Contact Delete Failed >_<");
+
+        }
         static void Main(string[] args)
         {
             //testFindContact(2);
             //testAddNewContact();
-
-            testUpdateContact(16);
+            //testUpdateContact(16);
+           
+            testDeleteContact(17);
             Console.ReadKey();
         }
     }
