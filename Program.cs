@@ -129,13 +129,28 @@ namespace ContactsConsoleApp_PresentationLayer
                 Console.WriteLine("Contact Delete Failed >_<");
 
         }
+        static void ListContacts()
+        {
+            DataTable dataTable = clsContact.ListContacts();
+
+            Console.WriteLine("\n -- List Contacts -- \n");
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                Console.WriteLine($"ID: {row["ContactID"]}     FirstName: {row["FirstName"]}     LastName: {row["LastName"]}    ");
+            }
+
+
+
+        }
         static void Main(string[] args)
         {
             //testFindContact(2);
             //testAddNewContact();
             //testUpdateContact(16);
-           
-            testDeleteContact(17);
+            //testDeleteContact(17);
+
+            ListContacts();
             Console.ReadKey();
         }
     }
