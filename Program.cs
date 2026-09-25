@@ -143,14 +143,67 @@ namespace ContactsConsoleApp_PresentationLayer
 
 
         }
+
+
+        //Countries
+        static void testFindCountryByID(int ID)
+        {
+            clsCountries Country = clsCountries.Find(ID);
+
+            if(Country != null)
+            {
+                Console.WriteLine("ID: " + Country.ID);
+                Console.WriteLine("Country Name: " + Country.Name);
+            }
+            else
+            {
+                Console.WriteLine("Not Found Country ID = " + ID.ToString());
+            }
+
+        }
+        static void testFindCountryByName(string CountryName)
+        {
+            clsCountries Country = clsCountries.Find(CountryName);
+
+            if(Country != null)
+            {
+                Console.WriteLine("ID: " + Country.ID);
+                Console.WriteLine("Country Name: " + Country.Name);
+            }
+            else
+            {
+                Console.WriteLine("Not Found Country Name = " + CountryName);
+            }
+        }
+
         static void Main(string[] args)
         {
+
+            //// --Contacts
             //testFindContact(2);
             //testAddNewContact();
             //testUpdateContact(16);
             //testDeleteContact(17);
+            //ListContacts();
 
-            ListContacts();
+
+            // Countries
+            //testFindCountryByID(1);
+            testFindCountryByName("United States");
+
+
+
+
+            //testIsCountryExistByID(1);
+            //testIsCountryExistByName(1);
+
+
+            //testAddNewCountry();
+            //testUpdateCountry(6);
+            //testDeleteCountry(6);
+            //ListCountries();
+
+
             Console.ReadKey();
         }
     }
