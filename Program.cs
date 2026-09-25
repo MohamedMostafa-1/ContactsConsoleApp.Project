@@ -191,6 +191,14 @@ namespace ContactsConsoleApp_PresentationLayer
                 Console.WriteLine("The Country is not Exist >_<");
                 
         }
+        static void testIsCountryExistByName(string CountryName)
+        {
+            if (clsCountries.testIsCountryExistByName(CountryName))
+                Console.WriteLine("The Country is Exist ^_^");
+            else
+                Console.WriteLine("The Country is not Exist >_<");
+                
+        }
 
         static void Main(string[] args)
         {
@@ -201,18 +209,18 @@ namespace ContactsConsoleApp_PresentationLayer
             //testUpdateContact(16);
             //testDeleteContact(17);
             //ListContacts();
-            testIsContactExistByID(1);
+            //testIsContactExistByID(1);
 
 
             // Countries
             //testFindCountryByID(1);
             //testFindCountryByName("United States");
             //testIsCountryExistByID(1);
+            testIsCountryExistByName("United States");
 
 
 
 
-            //testIsCountryExistByName(1);
 
 
             //testAddNewCountry();
