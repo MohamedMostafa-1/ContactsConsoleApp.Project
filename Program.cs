@@ -143,6 +143,13 @@ namespace ContactsConsoleApp_PresentationLayer
 
 
         }
+        static void testIsContactExistByID(int ID)
+        {
+            if (clsContact.IsContactExistByID(ID))
+                Console.WriteLine("Yes, Contact is there");
+            else
+                Console.WriteLine("No, Contact is there");
+        }
 
 
         //Countries
@@ -176,6 +183,15 @@ namespace ContactsConsoleApp_PresentationLayer
             }
         }
 
+        static void testIsCountryExistByID(int ID)
+        {
+            if (clsCountries.isExistCountryByID(ID))
+                Console.WriteLine("The Country is Exist ^_^");
+            else
+                Console.WriteLine("The Country is not Exist >_<");
+                
+        }
+
         static void Main(string[] args)
         {
 
@@ -185,16 +201,17 @@ namespace ContactsConsoleApp_PresentationLayer
             //testUpdateContact(16);
             //testDeleteContact(17);
             //ListContacts();
+            testIsContactExistByID(1);
 
 
             // Countries
             //testFindCountryByID(1);
-            testFindCountryByName("United States");
-
-
-
-
+            //testFindCountryByName("United States");
             //testIsCountryExistByID(1);
+
+
+
+
             //testIsCountryExistByName(1);
 
 
