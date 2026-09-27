@@ -45,6 +45,35 @@ namespace ContactsConsoleApp_PresentationLayer
 
             return Country;
         }
+
+        static void PrintContactByID(int ID) {
+            clsContact Contact1 = clsContact.Find(ID);
+            if(Contact1 != null)
+            {
+                Console.WriteLine("\n--- Contact Information ---");
+
+                Console.WriteLine("ID: " + Contact1.ID);
+                Console.WriteLine("FirstName: " + Contact1.FirstName);
+                Console.WriteLine("LastName: " + Contact1.LastName);
+                Console.WriteLine("Email: " + Contact1.Email);
+                Console.WriteLine("Phone: " + Contact1.Phone);
+                Console.WriteLine("Address: " + Contact1.Address);
+                Console.WriteLine("DateOfBirth: " + Contact1.DateOfBirth);
+                Console.WriteLine("CountryID: " + Contact1.CountryID);
+                Console.WriteLine("ImagePath: " + Contact1.ImagePath);
+            }
+            else
+            {
+                Console.WriteLine("Not Found That Contact ~_~");
+            }
+        }
+        static void PrintCountry(clsCountries Country)
+        {
+            Console.WriteLine("\n -------------- Country --------------\n");
+            Console.WriteLine("Country ID: " + Country.ID);
+            Console.WriteLine("Country Name: " + Country.Name);
+        }
+
         static void testFindContact(int ID)
         {
             clsContact contact = clsContact.Find(ID);
@@ -83,27 +112,6 @@ namespace ContactsConsoleApp_PresentationLayer
             }
 
 
-        }
-        static void PrintContactByID(int ID) {
-            clsContact Contact1 = clsContact.Find(ID);
-            if(Contact1 != null)
-            {
-                Console.WriteLine("\n--- Contact Information ---");
-
-                Console.WriteLine("ID: " + Contact1.ID);
-                Console.WriteLine("FirstName: " + Contact1.FirstName);
-                Console.WriteLine("LastName: " + Contact1.LastName);
-                Console.WriteLine("Email: " + Contact1.Email);
-                Console.WriteLine("Phone: " + Contact1.Phone);
-                Console.WriteLine("Address: " + Contact1.Address);
-                Console.WriteLine("DateOfBirth: " + Contact1.DateOfBirth);
-                Console.WriteLine("CountryID: " + Contact1.CountryID);
-                Console.WriteLine("ImagePath: " + Contact1.ImagePath);
-            }
-            else
-            {
-                Console.WriteLine("Not Found That Contact ~_~");
-            }
         }
         static void testUpdateContact(int ID)
         {
@@ -212,7 +220,6 @@ namespace ContactsConsoleApp_PresentationLayer
             else
                 Console.WriteLine("The Country is not Exist >_<");     
         }
-
         static void testAddNewCountry()
         {
             clsCountries Country = new clsCountries();
@@ -224,6 +231,20 @@ namespace ContactsConsoleApp_PresentationLayer
                 Console.WriteLine("\n------Add New Country Failed o_o");
                 
         }
+        static void testUpdateCountry(int CountryID)
+        {
+            clsCountries Country = clsCountries.Find(CountryID);
+            PrintCountry(Country);
+
+            Country = _ReadNewCountry(ref Country);
+
+            if (Country.Save())
+                Console.WriteLine("Upate Successfully ^_^");
+            else
+                Console.WriteLine("Upate Failed (o_o)");
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -243,13 +264,13 @@ namespace ContactsConsoleApp_PresentationLayer
             //testIsCountryExistByID(1);
             //testIsCountryExistByName("United States");
 
-            testAddNewCountry();
+            //testAddNewCountry();
+            testUpdateCountry(6);
 
 
 
 
 
-            //testUpdateCountry(6);
             //testDeleteCountry(6);
             //ListCountries();
 
