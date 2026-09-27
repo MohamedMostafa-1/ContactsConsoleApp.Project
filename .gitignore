@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build output
+**/bin/
+**/obj/
+
+# Compiled files
+*.dll
+*.exe
+*.pdb
+
+# Logs and temporary files
+*.log
+*.tmp
