@@ -12,6 +12,6 @@
 *.exe
 *.pdb
 
-# Logs and temporary files
+# Temporary files
 *.log
 *.tmp
