@@ -38,6 +38,13 @@ namespace ContactsConsoleApp_PresentationLayer
 
             return Contact1;
         }
+        private static clsCountries _ReadNewCountry(ref clsCountries Country)
+        {
+            Console.Write("\nEnter Name of Country: ");
+            Country.Name = Console.ReadLine();
+
+            return Country;
+        }
         static void testFindContact(int ID)
         {
             clsContact contact = clsContact.Find(ID);
@@ -123,10 +130,17 @@ namespace ContactsConsoleApp_PresentationLayer
         }
         static void testDeleteContact(int ID)
         {
-            if (clsContact.DelectContact(ID))
-                Console.WriteLine("Contact Delete Successfully ^_^");
+            if(clsContact.IsContactExistByID(ID)){
+
+                if (clsContact.DelectContact(ID))
+                    Console.WriteLine("Contact Delete Successfully ^_^");
+                else
+                    Console.WriteLine("Contact Delete Failed >_<");
+            }
             else
-                Console.WriteLine("Contact Delete Failed >_<");
+            {
+                Console.WriteLine("Not Found Contact");
+            }
 
         }
         static void ListContacts()
@@ -196,7 +210,18 @@ namespace ContactsConsoleApp_PresentationLayer
             if (clsCountries.testIsCountryExistByName(CountryName))
                 Console.WriteLine("The Country is Exist ^_^");
             else
-                Console.WriteLine("The Country is not Exist >_<");
+                Console.WriteLine("The Country is not Exist >_<");     
+        }
+
+        static void testAddNewCountry()
+        {
+            clsCountries Country = new clsCountries();
+            Country = _ReadNewCountry(ref Country);
+
+            if (Country.Save())
+                Console.WriteLine("\n------Add New Country Successfully ^_^");
+            else
+                Console.WriteLine("\n------Add New Country Failed o_o");
                 
         }
 
@@ -212,18 +237,18 @@ namespace ContactsConsoleApp_PresentationLayer
             //testIsContactExistByID(1);
 
 
-            // Countries
+            // --Countries
             //testFindCountryByID(1);
             //testFindCountryByName("United States");
             //testIsCountryExistByID(1);
-            testIsCountryExistByName("United States");
+            //testIsCountryExistByName("United States");
+
+            testAddNewCountry();
 
 
 
 
 
-
-            //testAddNewCountry();
             //testUpdateCountry(6);
             //testDeleteCountry(6);
             //ListCountries();
