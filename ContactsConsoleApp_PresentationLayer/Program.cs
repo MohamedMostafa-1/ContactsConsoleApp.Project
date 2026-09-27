@@ -244,7 +244,20 @@ namespace ContactsConsoleApp_PresentationLayer
                 Console.WriteLine("Upate Failed (o_o)");
 
         }
-
+        static void testDeleteCountry(int CountryID)
+        {
+            if (clsCountries.isExistCountryByID(CountryID))
+            {
+                if (clsCountries.DeleteCountry(CountryID))
+                    Console.WriteLine("\n------Delete Country Successfully ^_^");
+                else
+                    Console.WriteLine("\n------Delete Country Failed o_o");
+            }
+            else
+            {
+                Console.WriteLine("Oops,Not Found..!");
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -265,13 +278,13 @@ namespace ContactsConsoleApp_PresentationLayer
             //testIsCountryExistByName("United States");
 
             //testAddNewCountry();
-            testUpdateCountry(6);
+            //testUpdateCountry(6);
+            testDeleteCountry(6);
 
 
 
 
 
-            //testDeleteCountry(6);
             //ListCountries();
 
 

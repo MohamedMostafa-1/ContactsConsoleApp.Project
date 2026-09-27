@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using static ContactsDateAccessLayer.clsCountriesData;
 
 namespace ContactsDateAccessLayer
 {
@@ -217,6 +218,36 @@ namespace ContactsDateAccessLayer
                 rowAffected = command.ExecuteNonQuery();
 
                
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error Message: " + ex.Message);
+
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return (rowAffected > 0);
+        }
+        public static bool DeleteCountry(int CountryID)
+        {
+            SqlConnection connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
+            string Query = @"Delete Countries 
+                               Where CountryID = @CountryID ";
+
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.Parameters.AddWithValue("@CountryID", CountryID);
+
+            int rowAffected = 0;
+
+            try
+            {
+                connection.Open();
+                rowAffected = command.ExecuteNonQuery();
+
+
             }
             catch (Exception ex)
             {
