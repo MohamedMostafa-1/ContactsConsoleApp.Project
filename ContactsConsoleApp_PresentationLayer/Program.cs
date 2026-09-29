@@ -259,6 +259,20 @@ namespace ContactsConsoleApp_PresentationLayer
             }
         }
 
+        static void ListCountries()
+        {
+            DataTable table = new DataTable();
+
+            table = clsCountries.ListCountries();
+
+
+            Console.WriteLine("\n______List Countries______");
+            foreach(DataRow row in table.Rows)
+            {
+                Console.WriteLine($"ID: {row["CountryID"]}  CountryName: {row["CountryName"]}");
+            }
+        }
+
         static void Main(string[] args)
         {
 
@@ -279,13 +293,13 @@ namespace ContactsConsoleApp_PresentationLayer
 
             //testAddNewCountry();
             //testUpdateCountry(6);
-            testDeleteCountry(6);
+            //testDeleteCountry(6);
+
+
+            ListCountries();
 
 
 
-
-
-            //ListCountries();
 
 
             Console.ReadKey();
